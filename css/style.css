@@ -47,6 +47,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
@@ -61,7 +67,6 @@ html, body, header, footer, .wc-card, .floating-card, .cart-drawer, .modal-wrapp
 }
 
 body {
-  overflow-x: hidden;
   line-height: 1.6;
 }
 
@@ -159,6 +164,9 @@ h1, h2, h3, h4, h5, h6 {
 header {
   position: sticky;
   top: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background-color: var(--header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -438,6 +446,13 @@ nav {
   .hero-cta {
     flex-direction: column;
   }
+  .btn-primary, .btn-secondary, button {
+    max-width: 100% !important;
+    white-space: normal !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
 }
 
 .btn-primary {
@@ -580,6 +595,15 @@ nav {
   transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
 }
 
+@media (max-width: 480px) {
+  .trust-bar {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+    padding: 30px 10px !important;
+  }
+}
+
 .trust-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -589,8 +613,15 @@ nav {
 
 @media (max-width: 768px) {
   .trust-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 }
 
@@ -658,6 +689,20 @@ nav {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 }
 
 .cat-card {
@@ -783,19 +828,21 @@ nav {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (max-width: 650px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
@@ -1796,6 +1843,13 @@ nav {
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .rev-card {
+    width: calc(100vw - 32px) !important;
+    padding: 20px 14px !important;
+  }
+}
+
 .rev-header {
   display: flex;
   align-items: center;
@@ -2284,6 +2338,40 @@ footer {
   height: 90px !important;
 }
 
+@media (max-width: 768px) {
+  .header-container {
+    height: 70px !important;
+    padding: 0 12px !important;
+  }
+  .logo {
+    font-size: 16px !important;
+    letter-spacing: 1.5px !important;
+  }
+  .logo-studio {
+    font-size: 7px !important;
+    letter-spacing: 0.5px !important;
+  }
+  .header-utils {
+    gap: 8px !important;
+  }
+  .util-btn {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+  }
+  .util-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .badge-count {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+    top: -3px !important;
+    right: -3px !important;
+  }
+}
+
 .header-search-container {
   flex: 1;
   max-width: 50vw;
@@ -2381,12 +2469,24 @@ footer {
   box-shadow: 0 2px 4px rgba(232, 93, 117, 0.02);
 }
 
+@media (max-width: 768px) {
+  .category-nav-bar {
+    top: 70px !important;
+  }
+}
+
 .scroll-nav-container {
   display: flex;
   justify-content: center;
   gap: 32px;
   overflow-x: auto;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.scroll-nav-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari/Opera */
 }
 
 @media (max-width: 768px) {
@@ -2486,11 +2586,19 @@ footer {
 
 @media (max-width: 480px) {
   .hero-lifestyle-cta {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
   .hero-lifestyle-cta a {
-    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px 20px !important;
   }
 }
 

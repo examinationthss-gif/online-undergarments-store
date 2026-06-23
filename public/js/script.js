@@ -460,16 +460,21 @@ function initReviewSlider() {
   if (slides.length === 0) return;
 
   let currentXOffset = 0;
-  const slideWidth = 380 + 30; // Card width + gap
-  const totalWidth = slideWidth * slides.length;
-
   let directionForward = true;
 
   setInterval(() => {
+    const cardElement = slides[0];
+    const slideGap = 30;
+    const slideWidth = cardElement.getBoundingClientRect().width + slideGap;
+    const totalWidth = slideWidth * slides.length;
     const parentContainerWidth = carousel.parentElement.clientWidth;
     const maxScroll = totalWidth - parentContainerWidth;
 
-    if (maxScroll <= 0) return;
+    if (maxScroll <= 0) {
+      currentXOffset = 0;
+      carousel.style.transform = `translateX(0px)`;
+      return;
+    }
 
     if (directionForward) {
       currentXOffset += slideWidth;
