@@ -1,0 +1,6 @@
+{
+  "name": "Online Undergarments Store",
+  "description": "A premium eCommerce client demonstration website showcasing comfortable and confident innerwear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
