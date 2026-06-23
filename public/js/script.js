@@ -235,8 +235,10 @@ function initMobileMenu() {
   });
 
   // Close when outer is clicked
-  document.addEventListener('click', () => {
-    menu.classList.remove('open');
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target)) {
+      menu.classList.remove('open');
+    }
   });
 }
 
