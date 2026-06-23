@@ -50,61 +50,75 @@
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BAR -->
+  <!-- SECTION 1: ANNOUNCEMENT BAR -->
   <div class="announcement-bar" id="announcement-bar-main">
-    <div class="container">
-      <div class="announcement-item hl">🚚 Free Shipping Above ₹999</div>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="announcement-item hl">✨ FREE SHIPPING ABOVE ₹999</div>
       <div class="announcement-bar-items">
-        <div class="announcement-item">🔒 Secure Checkout</div>
-        <div class="announcement-item">⭐ Rated 4.9/5 By Our Clients</div>
-        <div class="announcement-item">📦 Order Tracking Available</div>
+        <div class="announcement-item">⚜️ Cod Available</div>
+        <div class="announcement-item" style="font-weight: 700;">🔒 100% SECURE PAYMENTS</div>
+        <div class="announcement-item">🌸 Easy 15-Day Returns</div>
       </div>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header id="header-main">
-    <div class="container">
-      <!-- High fashion text-based logo -->
-      <a href="index.html" class="logo" id="logo-branding-link">
-        UNDERS<span>T</span>ORE
-        <span class="logo-studio">By LearnWithJulfy Studio</span>
+  <!-- SECTION 2: FASHION HEADER -->
+  <header id="header-main" style="position: sticky; top: 0; background-color: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid var(--gray-light); transition: background-color var(--transition-smooth), border-color var(--transition-smooth);">
+    <div class="container header-container">
+      <!-- High fashion text-based logo (Left) -->
+      <a href="index.html" class="logo" id="logo-branding-link" style="font-family: var(--font-display); font-size: 24px; font-weight: 800; letter-spacing: 3px; color: var(--primary);">
+        UNDERS<span style="color: var(--gold);">STORE</span>
+        <span class="logo-studio" style="font-size: 8px; letter-spacing: 1px; opacity: 0.7; color: var(--gray-text);">BY LEARNWITHJULFY STUDIO</span>
       </a>
 
-      <!-- Navigation System -->
-      <nav id="navbar-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="#shop-categories" class="nav-link">Shop</a>
-        <a href="#featured-collection" class="nav-link">Men</a>
-        <a href="#featured-collection" class="nav-link">Women</a>
-        <a href="#featured-collection" class="nav-link">Sports</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+      <!-- Search Box (Center) -->
+      <div class="header-search-container">
+        <form class="header-search-form" onsubmit="event.preventDefault();">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--primary); pointer-events: none;"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+          <input type="text" placeholder="Search for luxury bras, soft briefs, premium lounge..." class="header-search-input" style="width: 100%; padding: 12px 20px 12px 48px; border-radius: 50px; border: 1.5px solid var(--gray-light); background-color: var(--white); color: var(--black); font-family: var(--font-sans); font-size: 14px; outline: none; transition: all var(--transition-fast);">
+        </form>
+      </div>
 
-      <!-- Utility triggers (Search, wishlist, shopping bag, secure badge) -->
+      <!-- Icon Actions (Right: Account, Wishlist, Cart) -->
       <div class="header-utils">
-        <div class="secure-badge" title="Secure Store" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.25); border-radius: 99px; color: var(--primary); font-size: 11px; font-weight: 600; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.5px;">
-          <span>🔒 Secure Store</span>
-        </div>
-        
-        <a href="#featured-collection" class="util-btn" id="wishlist-trigger-link" aria-label="Wishlist items count">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-          <span class="badge-count wishlist-badge" style="display:none;">0</span>
-        </a>
-
-        <button class="util-btn" id="cart-toggle" aria-label="View shopping bag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span class="badge-count cart-badge" style="display:none;">0</span>
+        <!-- Account Profile Icon -->
+        <button class="util-btn" onclick="alert('Demo: Welcome to your luxury profile account!')" title="My Account" style="position: relative; width: 44px; height: 44px; border-radius: 50%; background-color: var(--secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; border: none; transition: all var(--transition-smooth); cursor: pointer;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </button>
 
-        <!-- Hamburg toggle on mobile -->
-        <button class="util-btn mobile-nav-toggle" id="mobile-menu-trigger" aria-label="Mobile Navigation toggle">
+        <!-- Wishlist link -->
+        <a href="#featured-collection" class="util-btn" id="wishlist-trigger-link" aria-label="Wishlist items count" title="My Wishlist" style="position: relative; width: 44px; height: 44px; border-radius: 50%; background-color: var(--secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; transition: all var(--transition-smooth);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge-count wishlist-badge" style="display:none; position: absolute; top: -2px; right: -2px; font-size: 10px; font-weight: 700; color: #FFFFFF; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--white); background-color: var(--primary);">0</span>
+        </a>
+
+        <!-- Shopping Bag toggle to show Cart -->
+        <button class="util-btn" id="cart-toggle" aria-label="View shopping bag" title="Shopping Bag" style="position: relative; width: 44px; height: 44px; border-radius: 50%; background-color: var(--secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; border: none; transition: all var(--transition-smooth); cursor: pointer;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count cart-badge" style="display:none; position: absolute; top: -2px; right: -2px; font-size: 10px; font-weight: 700; color: #FFFFFF; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--white); background-color: var(--accent);">0</span>
+        </button>
+
+        <!-- Hamburg Trigger (Mobile menu toggle) -->
+        <button class="util-btn mobile-nav-toggle" id="mobile-menu-trigger" aria-label="Mobile Navigation toggle" style="position: relative; width: 44px; height: 44px; border-radius: 50%; background-color: var(--secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; border: none; transition: all var(--transition-smooth); cursor: pointer;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- SECTION 3: CATEGORY NAVIGATION BAR -->
+  <div class="category-nav-bar" id="category-navigation-bar">
+    <div class="container scroll-nav-container">
+      <a href="#shop-categories" class="category-nav-link" data-cat="women">Women</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="men">Men</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="sports">Sports</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="bras">Bras</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="panties">Panties</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="nightwear">Nightwear</a>
+      <a href="#shop-categories" class="category-nav-link" data-cat="shapewear">Shapewear</a>
+      <a href="#featured-collection" class="category-nav-link text-primary font-semibold" data-cat="new-arrivals" style="color: var(--accent);">New Arrivals 🌟</a>
+    </div>
+  </div>
 
   <!-- MOBILE NAVIGATION DROP-DOWN -->
   <div class="mobile-menu" id="mobile-nav-panel">
@@ -115,114 +129,127 @@
     <a href="contact.html" class="nav-link">Contact Studio</a>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero-sec-branding">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="hero-tag">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          Trusted by Modern Shoppers
-        </span>
-        <h1>Premium Innerwear Designed for Comfort and Confidence</h1>
-        <p class="hero-sub">Explore premium quality innerwear crafted for everyday comfort, durability, and a second-skin feel. Perfect fits that support your confidence from within.</p>
-        <div class="hero-cta">
-          <a href="#featured-collection" class="btn-primary">Shop Collection</a>
-          <a href="#featured-collection" class="btn-secondary">View Best Sellers</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-img-wrap">
-          <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQF1AM9X2VAdyd6LLPVsBmKJNAGTBrgQDKQ7IRYZH1iQIcQs7u650qduuWhGz0gjoRh5VHpxgtHkLETzezZoPo_n-6DxMOI" alt="Luxury premium underwear representation" class="hero-img">
-        </div>
-        <!-- Absolute Float Elements for that instant "Wow" feeling -->
-        <div class="floating-card fc-1">
-          <div class="fc-icon">🔥</div>
-          <div class="fc-text">
-            <h4>Ultra Soft Cotton</h4>
-            <p>100% Breathable Fit</p>
-          </div>
-        </div>
-        <div class="floating-card fc-2">
-          <div class="fc-icon">✨</div>
-          <div class="fc-text">
-            <h4>No Skin Friction</h4>
-            <p>Hypoallergenic Modal</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <section class="trust-bar" id="trust-bar-statistics">
-    <div class="container trust-wrapper">
-      <div class="trust-item">
-        <h3>1000+</h3>
-        <p>Happy Customers</p>
-      </div>
-      <div class="trust-item">
-        <h3>50+</h3>
-        <p>Comfort Products</p>
-      </div>
-      <div class="trust-item">
-        <h3>4.9★</h3>
-        <p>Client Rating</p>
-      </div>
-      <div class="trust-item">
-        <h3>99%</h3>
-        <p>Satisfaction Rate</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SHOP BY CATEGORY -->
-  <section class="categories" id="shop-categories">
+  <!-- SECTION 4: FULL-WIDTH HERO BANNER -->
+  <section class="hero-fullwidth" id="hero-sec-lifestyle">
     <div class="container">
-      <div class="section-header">
-        <p>Categories</p>
-        <h2>Shop By Niche Collection</h2>
+      <div class="hero-lifestyle-content">
+        <span class="hero-lifestyle-badge" style="display:inline-block; font-size:12px; text-transform:uppercase; font-weight:700; letter-spacing:2px; color: var(--accent); margin-bottom:15px;">⚜️ THE LUXURY COMFORT COLLECTION</span>
+        <h1 style="color: var(--black); font-size: clamp(38px, 6vw, 68px); font-family: var(--font-display); font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px;">Feel Beautiful Every Day</h1>
+        <h2 style="font-family: var(--font-sans); font-size:24px; font-weight:400; color: var(--gray-text); line-height:1.4; margin-bottom:30px;">Soft Fabrics. Perfect Fit.<br>Endless Comfort.</h2>
+        <div class="hero-lifestyle-cta">
+          <a href="#featured-collection" class="btn-primary" style="background-color: var(--primary); font-weight:600; border-radius:30px; padding:16px 36px; box-shadow: var(--glow-btn); color:#fff; display:inline-flex; align-items:center; gap:8px;">Shop Collection <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#featured-collection" class="btn-secondary" style="border:2px solid var(--primary); color: var(--primary); font-weight:600; border-radius:30px; padding:14px 34px; display:inline-flex; align-items:center;">Explore Best Sellers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR STATISTICS -->
+  <section class="trust-bar" id="trust-bar-statistics" style="background-color: var(--secondary); padding: 40px 0; border: none; margin-bottom: 20px; border-radius: 20px; margin-left: 16px; margin-right: 16px;">
+    <div class="container trust-wrapper" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;">
+      <div class="trust-item">
+        <h3 style="font-size: 40px; color: var(--primary); margin-bottom: 6px; font-weight: 800; letter-spacing: -1px; font-family: var(--font-display);">1000+</h3>
+        <p style="color: var(--black); font-weight: 600; font-size: 14px;">Happy Customers</p>
+      </div>
+      <div class="trust-item">
+        <h3 style="font-size: 40px; color: var(--primary); margin-bottom: 6px; font-weight: 800; letter-spacing: -1px; font-family: var(--font-display);">50+</h3>
+        <p style="color: var(--black); font-weight: 600; font-size: 14px;">Comfort Products</p>
+      </div>
+      <div class="trust-item">
+        <h3 style="font-size: 40px; color: var(--primary); margin-bottom: 6px; font-weight: 800; letter-spacing: -1px; font-family: var(--font-display);">4.9★</h3>
+        <p style="color: var(--black); font-weight: 600; font-size: 14px;">Client Rating</p>
+      </div>
+      <div class="trust-item">
+        <h3 style="font-size: 40px; color: var(--primary); margin-bottom: 6px; font-weight: 800; letter-spacing: -1px; font-family: var(--font-display);">99%</h3>
+        <p style="color: var(--black); font-weight: 600; font-size: 14px;">Satisfaction Rate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SHOP BY CATEGORY -->
+  <section class="categories" id="shop-categories" style="padding: 80px 0 60px;">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <p style="color: var(--primary); font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:13px; margin-bottom:10px;">Our Premium Niche Lines</p>
+        <h2 style="font-size:36px; color: var(--black); font-family: var(--font-display); font-weight:800;">Shop By Category</h2>
       </div>
 
-      <!-- Bento-style category grids with high quality overlays and buttons -->
-      <div class="category-grid">
-        <div class="cat-card cat-1">
-          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Men's collection lifestyle image">
-          <div class="cat-info">
-            <span class="badge">ELEGANT COMFORT</span>
-            <h3>Men's Collection</h3>
-            <button class="cat-btn">Explore Men <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <!-- Card 1: Bras -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1594950596316-274cba00742f?auto=format&fit=crop&w=600&q=80" alt="Premium custom collection of bras" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>EXPLORE</span>
+              <h3>Seductive Bras</h3>
+              <p>Tailored lifting, seamless wire-free daily cup styles.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
           </div>
         </div>
-        <div class="cat-card cat-2">
-          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Women's collection lifestyle image">
-          <div class="cat-info">
-            <span class="badge">LUXURY SILK</span>
-            <h3>Women's Collection</h3>
-            <button class="cat-btn">Explore Women <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+
+        <!-- Card 2: Panties -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Seamless luxury panties" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>LUXURY</span>
+              <h3>Soft Panties</h3>
+              <p>Breathable hipster, seamless bikini, luxury bamboo lines.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
           </div>
         </div>
-        <div class="cat-card cat-3">
-          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Sports athletic wear model">
-          <div class="cat-info">
-            <span class="badge">ACTIVE COMPRESSION</span>
-            <h3>Sports Collection</h3>
-            <button class="cat-btn">Explore Sports <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+
+        <!-- Card 3: Sportswear -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Premium sports bras and leggings line" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>ACTIVE</span>
+              <h3>Sportswear</h3>
+              <p>Anti-sweat dry fit compression bands & racerbacks.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
           </div>
         </div>
-        <div class="cat-card cat-4">
-          <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="Kids collection graphic representation">
-          <div class="cat-info">
-            <span class="badge">100% ORGANIC COTTON</span>
-            <h3>Kids Collection</h3>
-            <button class="cat-btn">Explore Kids <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+
+        <!-- Card 4: Nightwear -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1590509807905-b7b0d2493f0b?auto=format&fit=crop&w=600&q=80" alt="Premium Loungewear Nightwear line" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>BOUTIQUE</span>
+              <h3>Luxury Nightwear</h3>
+              <p>Satin slip gowns, ultra-soft pajama lounge suits.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
           </div>
         </div>
-        <div class="cat-card cat-5">
-          <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Premium luxury collection aesthetic">
-          <div class="cat-info">
-            <span class="badge">LIMITED EDITION EDITIONS</span>
-            <h3>Premium Collection</h3>
-            <button class="cat-btn">Explore Premium <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+
+        <!-- Card 5: Shapewear -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Seamless luxury contouring shapewear" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>CONTOUR</span>
+              <h3>Premium Shapewear</h3>
+              <p>Smooth silhouettes, light breathability body contouring.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Men Innerwear -->
+        <div class="cat-card-fashion">
+          <div class="cat-image-wrap">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Men's comfort trunks briefs" referrerPolicy="no-referrer">
+            <div class="cat-overlay-content">
+              <span>ESSENTIAL</span>
+              <h3>Men's Innerwear</h3>
+              <p>Organic Egyptian cotton, friction-free briefs & boxers.</p>
+              <a href="#featured-collection" class="cat-discover-btn">View Collection <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(2px);" class="lucide-arrow-right"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
           </div>
         </div>
       </div>
@@ -234,7 +261,7 @@
     <div class="container">
       <div class="section-header">
         <p>Best Sellers</p>
-        <h2>Featured Client Demo Undergarments</h2>
+        <h2>Designed for Everyday Confidence</h2>
       </div>
 
       <div class="products-grid">
@@ -412,8 +439,8 @@
   <section class="reviews" id="customer-feedback-carousel">
     <div class="container">
       <div class="section-header">
-        <p>Words From Real Buyers</p>
-        <h2>Client Satisfaction Verified</h2>
+        <p>Comfort That Matters</p>
+        <h2>Feel Beautiful Every Day</h2>
       </div>
 
       <div class="review-slider-window">
